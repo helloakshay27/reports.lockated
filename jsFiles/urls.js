@@ -1,6 +1,6 @@
 // Server IP
-let ip = "https://reports.lockated.com/api-fm/";
-let ip2 = "https://reports.lockated.com/api-fm/";
+let ip = "https://oig-reports.lockated.com/api-fm/";
+let ip2 = "https://oig-reports.lockated.com/api-fm/";
 
 
 let getSites = ip + "inventory/get-mappings/";

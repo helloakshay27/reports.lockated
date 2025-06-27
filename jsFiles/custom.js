@@ -12052,7 +12052,7 @@ function saveModifiedLayout() {
 
 
 
-  fetch('https://reports.lockated.com/api-fm/user-dashboard/save-dashboard/', {
+  fetch('https://oig-reports.lockated.com/api-fm/user-dashboard/save-dashboard/', {
     method: 'POST',
     body: formData,
   })
@@ -12331,7 +12331,7 @@ function initLoad() {
   console.log(newIdLink);
   console.log("hiiii i am hereeeeeeeee");
   let selectedWidgetsList = []
-  fetch(`https://reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_custom`)
+  fetch(`https://oig-reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_custom`)
     .then(response => {
       console.log("hiiii i am hereeeeeeeee nowwwww");
       if (!response.ok) {
@@ -13622,7 +13622,7 @@ initLoad();
 // // site Apply Filter
 function applySites() {
   let selectedWidgetsList = []
-  fetch(`https://reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_custom`)
+  fetch(`https://oig-reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_custom`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -14929,7 +14929,7 @@ function getDetailsIfIdExists(pro_id, pro_name, link_society_id) {
 
 
   let selectedWidgetsList = []
-  fetch(`https://reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}`)
+  fetch(`https://oig-reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -16350,7 +16350,7 @@ function showDateCustom() {
 function getResult() {
 
   let selectedWidgetsList = []
-  fetch(`https://reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}`)
+  fetch(`https://oig-reports.lockated.com/api-fm/user-dashboard/get-dashboard/?token=${token}`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
