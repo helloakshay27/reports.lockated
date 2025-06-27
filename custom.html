@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>FM Dashboard</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/grid.css" rel="stylesheet" />
+
+  <!-- support for IE -->
+  <script src="node_modules/gridstack/dist/es5/gridstack-poly.js"></script>
+  <script src="node_modules/gridstack/dist/es5/gridstack-all.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@2.0.2/dist/gridstack-extra.css" />
+
+  <!-- Charts CDN -->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img id="selectedCompanyLogo" alt="Logo">
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <!-- company dropdown start----------------------------------- -->
+        <li class="nav-item dropdown pe-3" id="list2">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <span id="firstCompany" class="d-none d-md-block dropdown-toggle ps-2 anchor maindasboard">Select Company</span>
+          </a>
+          <ul id="showCompanies" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            style="position: absolute; top: 100%; left: 0; z-index: 1; background-color: aliceblue; border-radius: 5px; padding: auto; height: 300px; overflow-y: scroll;">
+            <!-- Company options will be dynamically added here -->
+          </ul>
+        </li>
+        <!-- company dropdown end----------------------------------- -->
+
+
+        <!-- region dropdown starts-------------------------------------->
+
+        <li class="nav-item dropdown pe-3" id="list2">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <span id="firstRegion" class="d-none d-md-block dropdown-toggle ps-2 anchor">Select Region</span>
+          </a>
+          <ul id="showRegions" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            style="position: absolute; top: 100%; left: 0; z-index: 1; background-color: aliceblue; border-radius: 5px; padding: auto;">
+            <!-- Company options will be dynamically added here -->
+          </ul>
+        </li>
+
+        <!-- -----------------------region dropdown ends ---------------------------- -->
+
+        <!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+        <li class="nav-item dropdown pe-3 " id="list">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0 " href="#" data-bs-toggle="dropdown">
+            <span id="firstSite" class="d-none d-md-block dropdown-toggle ps-2 anchor"> Select Sites </span>
+          </a>
+          <!-- <span class="anchor" > Select Sites</span> -->
+          <ul id="showSites" class="dropdown-menu dropdown-menu-end dropdown-menu-arrow  profile "
+            style="position: absolute;top: 100%;left: 0;  z-index: 1;background-color: aliceblue;border-radius: 5px; padding: auto; height: 300px; overflow-y: scroll;">
+
+          </ul><!-- End Sites Dropdown Items -->
+
+        </li><!-- End Sites Nav -->
+
+        <!-- --------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/favicon.png" alt="Profile" class="rounded-circle">
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+    <button
+      style="background-color:#77216f;border-radius: 4px;width:auto;height: 35px; width: 100%; color: white; border: none; "
+      onclick="saveModifiedLayout()">Save Dashboard</button>
+
+    <ul class="sidebar-nav" id="sidebar-nav" style="margin-top: 30px;">
+      <li class="nav-item">
+
+        <h5 style="color:#77216f;" class="my-2 mx-3"><b>Menu</b></h5>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#parking-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>Parking</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="parking-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalParking"  style="margin-right: 10px;" onclick="showTotalParking();" checked>
+                <label for="checkTotalParking"><span>Total Parking</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkFreeParking"  style="margin-right: 10px;" onclick="showFreeParking();" checked>
+                <label for="checkFreeParking"><span>Free Parking</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkPaidParking"  style="margin-right: 10px;" onclick="showPaidParking();" checked>
+                <label for="checkPaidParking"><span>Paid Parking</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkOccupiedParking"  style="margin-right: 10px;" onclick="showOccupiedParking();" checked>
+                <label for="checkOccupiedParking"><span>Occupied Parking</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkVacantParking"  style="margin-right: 10px;" onclick="showVacantParking();" checked>
+                <label for="checkVacantParking"><span>Vacant Parking</span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#assets-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>Assets</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="assets-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalAssetsAvailable"  style="margin-right: 10px;" onclick="showTotalAssetsAvailable();" checked>
+                <label for="checkTotalAssetsAvailable"><span>Total Assets Available</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkAssetsInUse"  style="margin-right: 10px;" onclick="showAssetsInUse();" checked>
+                <label for="checkAssetsInUse"><span>Assets In Use</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkAssetInBreakdown"  style="margin-right: 10px;" onclick="showAssetInBreakdown();" checked>
+                <label for="checkAssetInBreakdown"><span>Asset In Breakdown</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCriticalAssetsInBreakdown"  style="margin-right: 10px;" onclick="showCriticalAssetsInBreakdown();" checked>
+                <label for="checkCriticalAssetsInBreakdown"><span>Critical Asset In Breakdown</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkPPMConductedAssets"  style="margin-right: 10px;" onclick="showPPMConductedAssets();" checked>
+                <label for="checkPPMConductedAssets"><span>PPM Conducted Assets</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCategoryWiseTickets"  style="margin-right: 10px;" onclick="showCategoryWiseTickets();" checked>
+                <label for="checkCategoryWiseTickets"><span>Asset BreakDown</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkAssetsBreakdown"  style="margin-right: 10px;" onclick="showAssetsBreakdown();" checked>
+                <label for="checkAssetsBreakdown"><span>Assets Breakdown Table</span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#Tickets-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-layout-text-window-reverse"></i><span>Tickets</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="Tickets-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a>
+                <input type="checkbox" id="checkTickets"  style="margin-right: 10px;" onclick="showTickets();" checked>
+                <label for="checkTickets"><span>Tickets</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCategoryWiseTickets"  style="margin-right: 10px;" onclick="showCategoryWiseTickets();" checked>
+                <label for="checkCategoryWiseTickets"><span>Unit Category-wise Tickets</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCategoryWiseProactiveTickets"  style="margin-right: 10px;" onclick="showCategoryWiseProactiveTickets();" checked>
+                <label for="checkCategoryWiseProactiveTickets"><span>Unit Category-wise Proactive Tickets</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCACategoryWiseTickets"  style="margin-right: 10px;" onclick="showCACategoryWiseTickets();" checked>
+                <label for="checkCACategoryWiseTickets"><span>Common Area Category-wise Tickets</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCACategoryWiseProactiveTickets"  style="margin-right: 10px;" onclick="showCACategoryWiseProactiveTickets();" checked>
+                <label for="checkCACategoryWiseProactiveTickets"><span>Common Area Category-wise Proactive Tickets</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTicketsAgeingMatrix"  style="margin-right: 10px;" onclick="showTicketsAgeingMatrix();" checked>
+                <label for="checkTicketsAgeingMatrix"><span>Tickets Ageing Matrix</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkResolutionTAT"  style="margin-right: 10px;" onclick="showResolutionTAT();" checked>
+                <label for="checkResolutionTAT"><span>Resolution TAT</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkResponseTAT"  style="margin-right: 10px;" onclick="showResponseTAT();" checked>
+                <label for="checkResponseTAT"><span>Response TAT</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkReactiveProactiveTickets"  style="margin-right: 10px;" onclick="showReactiveProactiveTickets();" checked>
+                <label for="checkReactiveProactiveTickets"><span>Reactive Proactive Tickets</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+
+              <a>
+                <input type="checkbox" id="checkCustomAvg"  style="margin-right: 10px;" onclick="showCustomAvg();" checked>
+                <label for="checkCustomAvg"><span>Customer Average Rating </span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCustomerSentiments"  style="margin-right: 10px;" onclick="showCustomerSentiments();" checked>
+                <label for="checkCustomerSentiments"><span>Customer Sentiments </span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#checklist-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>Checklist</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="checklist-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a>
+                <input type="checkbox" id="checkCheckList"  style="margin-right: 10px;" onclick="showCheckList();" checked>
+                <label for="checkCheckList"><span>Checklist </span>
+                </label>
+              </a>
+            </li>
+  
+            <li>
+              <a>
+                <input type="checkbox" id="checkTechnicalChecklist"  style="margin-right: 10px;" onclick="showTechnicalChecklist();" checked>
+                <label for="checkTechnicalChecklist"><span> Technical Checklist </span>
+                </label>
+              </a>
+            </li>
+            
+            <li>
+              <a>
+                <input type="checkbox" id="checkNonTechnicalChecklist"  style="margin-right: 10px;" onclick="showNonTechnicalChecklist();" checked>
+                <label for="checkNonTechnicalChecklist"><span> Non Technical Checklist </span>
+                </label>
+              </a>
+            </li>
+             
+            <li>
+              <a>
+                <input type="checkbox" id="checkTopChecklist"  style="margin-right: 10px;" onclick="showTopChecklist();" checked>
+                <label for="checkTopChecklist"><span> Top 10 Checklist </span>
+                </label>
+              </a>
+            </li>
+           
+  
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#escalation-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span> Escalation</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="escalation-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+  
+            <li>
+              <a>
+                <input type="checkbox" id="checkOpenEscalation"  style="margin-right: 10px;" onclick="showOpenEscalation();" checked>
+                <label for="checkOpenEscalation"><span>Open Escalations</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCloseEscalation"  style="margin-right: 10px;" onclick="showCloseEscalation();" checked>
+                <label for="checkCloseEscalation"><span>Close Escalations</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkAvgEscalation"  style="margin-right: 10px;" onclick="showAvgEscalation();" checked>
+                <label for="checkAvgEscalation"><span>Average Escalations</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkExecutiveEscalation"  style="margin-right: 10px;" onclick="showExecutiveEscalation();" checked>
+                <label for="checkExecutiveEscalation"><span>Executive Escalations</span>
+                </label>
+              </a>
+            </li>
+  
+            <li>
+              <a>
+                <input type="checkbox" id="checkZoneWiseEscalation"  style="margin-right: 10px;" onclick="showZoneWiseEscalation();" checked>
+                <label for="checkZoneWiseEscalation"><span>Zone Escalations</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkOpenAndCloseEscalation"  style="margin-right: 10px;" onclick="showOpenAndCloseEscalation();" checked>
+                <label for="checkOpenAndCloseEscalation"><span>Open & Close Escalations</span>
+                </label>
+              </a>
+            </li>
+  
+            <li>
+              <a>
+                <input type="checkbox" id="checkCategoryWiseEscalation"  style="margin-right: 10px;" onclick="showCategoryWiseEscalation();" checked>
+                <label for="checkCategoryWiseEscalation"><span>Category Wise Executive Escalations</span>
+                </label>
+              </a>
+            </li>
+  
+            <li>
+              <a>
+                <input type="checkbox" id="checkServicePartnerEvaluation"  style="margin-right: 10px;" onclick="showServicePartnerEvaluation();" checked>
+                <label for="checkServicePartnerEvaluation"><span>Service Partner Evaluation</span>
+                </label>
+              </a>
+            </li>
+           
+  
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#incident-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>Incidents</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="incident-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            
+            <li>
+              <a>
+                <input type="checkbox" id="checkLTIR"  style="margin-right: 10px;" onclick="showLTIR();" checked>
+                <label for="checkLTIR"><span>LTIR</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkZeroIncidentDays"  style="margin-right: 10px;" onclick="showZeroIncidentDays();" checked>
+                <label for="checkZeroIncidentDays"><span>Zero Incident Days</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkIncidentPerSqFt"  style="margin-right: 10px;" onclick="showIncidentPerSqFt();" checked>
+                <label for="checkIncidentPerSqFt"><span>Incident Per Million Sq Ft Per Annum</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkIncidentNearMissGoodCatch"  style="margin-right: 10px;" onclick="showIncidentNearMissGoodCatch();" checked>
+                <label for="checkIncidentNearMissGoodCatch"><span>Incident Near Miss Good Catch Per Million Sq Ft Per Annum</span>
+                </label>
+              </a>
+            </li>
+            <li>
+
+              <a>
+                <input type="checkbox" id="checkSafeManHours"  style="margin-right: 10px;" onclick="showSafeManHours();" checked>
+                <label for="checkSafeManHours"><span>Safe Man-Hours</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkIncidents"  style="margin-right: 10px;" onclick="showIncidents();" checked>
+                <label for="checkIncidents"><span>Incidents</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkIncident"  style="margin-right: 10px;" onclick="showIncidentSummary();" checked>
+                <label for="checkIncident"><span>Incident Summary</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkPyramid"  style="margin-right: 10px;" onclick="showPyramid();" checked>
+                <label for="checkPyramid"><span>Level Wise Incidents</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCategoryWiseIncidents"  style="margin-right: 10px;" onclick="showCategoryWiseIncidents();" checked>
+                <label for="checkCategoryWiseIncidents"><span>Top 5 Category Wise Incidents</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkBodyInjuryChart"  style="margin-right: 10px;" onclick="showBodyInjuryChart();" checked>
+                <label for="checkBodyInjuryChart"><span>Body Injury Chart</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkRootCause"  style="margin-right: 10px;" onclick="showRootCause();" checked>
+                <label for="checkRootCause"><span>Primary Root Cause Category</span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#quickgate-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>Quikgate</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="quickgate-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a>
+                <input type="checkbox" id="checkVisitors"  style="margin-right: 10px;" onclick="showVisitors();" checked>
+                <label for="checkVisitors"><span>Visitors </span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalVisitorsII"  style="margin-right: 10px;" onclick="showTotalVisitors2();" checked>
+                <label for="checkTotalVisitorsII"><span>Total Visitors II </span>
+                </label>
+              </a>
+            </li>
+            <li>
+  
+              <a>
+                <input type="checkbox" id="checkTotalGatePass"  style="margin-right: 10px;" onclick="showTotalGatePass();" checked>
+                <label for="checkTotalGatePass"><span>Total Gate Pass </span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkReturnablePass"  style="margin-right: 10px;" onclick="showReturnablePass();" checked>
+                <label for="checkReturnablePass"><span>Returnable Gate Pass Issued</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkNonReturnablePass"  style="margin-right: 10px;" onclick="showNonReturnablePass();" checked>
+                <label for="checkNonReturnablePass"><span>Non Returnable Gate Pass Issued</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalVisitors"  style="margin-right: 10px;" onclick="showTotalVisitors();" checked>
+                <label for="checkTotalVisitors"><span>Total Visitors</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+
+              <a>
+                <input type="checkbox" id="checkExpectedVisitors"  style="margin-right: 10px;" onclick="showExpectedVisitors();" checked>
+                <label for="checkExpectedVisitors"><span>Expected Visitors</span>
+                </label>
+              </a>
+            </li>
+            <li>
+
+              <a>
+                <input type="checkbox" id="checkUnExpectedVisitors"  style="margin-right: 10px;" onclick="showUnExpectedVisitors();" checked>
+                <label for="checkUnExpectedVisitors"><span>UnExpected Visitors</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkGoodsIn"  style="margin-right: 10px;" onclick="showGoodsIn();" checked>
+                <label for="checkGoodsIn"><span>Good In</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkGoodsOut"  style="margin-right: 10px;" onclick="showGoodsOut();" checked>
+                <label for="checkGoodsOut"><span>Good Out</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkGoodsOutwards"  style="margin-right: 10px;" onclick="showGoodsOutwards();" checked>
+                <label for="checkGoodsOutwards"><span>Goods Outwards </span>
+                </label>
+              </a>
+            </li>
+            <li>
+
+              <a>
+                <input type="checkbox" id="checkGoodsInwards"  style="margin-right: 10px;" onclick="showGoodsInwards();" checked>
+                <label for="checkGoodsInwards"><span>Goods Inwards </span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalStaff"  style="margin-right: 10px;" onclick="showTotalStaff();" checked>
+                <label for="checkTotalStaff"><span>Total Staff  </span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkStaffIn"  style="margin-right: 10px;" onclick="showStaffIn();" checked>
+                <label for="checkStaffIn"><span>Staff In  </span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkStaffOut"  style="margin-right: 10px;" onclick="showStaffOut();" checked>
+                <label for="checkStaffOut"><span>Staff Out  </span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkDeliveryVisitors"  style="margin-right: 10px;" onclick="showDeliveryVisitors();" checked>
+                <label for="checkDeliveryVisitors"><span>Delivery Visitors  </span>
+                </label>
+              </a>
+            </li>
+           
+  
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#inventory-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>Inventory</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="inventory-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a>
+                <input type="checkbox" id="checkInventoryConsumptionGreen"  style="margin-right: 10px;" onclick="showInventoryConsumptionGreen();" checked>
+                <label for="checkInventoryConsumptionGreen"><span>Inventory Consumption Green </span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkInventoryConsumptionReportGreen"  style="margin-right: 10px;" onclick="showInventoryConsumptionReportGreen();" checked>
+                <label for="checkInventoryConsumptionReportGreen"><span>Inventory Consumption Report Green</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkInventory"  style="margin-right: 10px;" onclick="showTotalInventory();" checked>
+                <label for="checkInventory"><span>Inventory</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTrendsOverMonthSites"  style="margin-right: 10px;" onclick="showTrendsOverMonthSites();" checked>
+                <label for="checkTrendsOverMonthSites"><span>Inventory Trends</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCurrentStock"  style="margin-right: 10px;" onclick="showCurrentStock();" checked>
+                <label for="checkCurrentStock"><span>Current Stock</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCurrentStockGreen"  style="margin-right: 10px;" onclick="showCurrentStockGreen();" checked>
+                <label for="checkCurrentStockGreen"><span>Current Stock Green</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkInventoryConsumption"  style="margin-right: 10px;" onclick="showInventoryConsumption();" checked>
+                <label for="checkInventoryConsumption"><span>Inventory Consumption</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkInventoryReport"  style="margin-right: 10px;" onclick="showInventoryConsumptionReport();" checked>
+                <label for="checkInventoryReport"><span>Inventory Consumption Report</span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#permit-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span> Permit</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="permit-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+              <a>
+                <input type="checkbox" id="checkPermitSite"  style="margin-right: 10px;" onclick="showPermitSite();" checked>
+                <label for="checkPermitSite"><span>Permit Per Site </span>
+                </label>
+              </a>
+            </li>
+    
+            <li>
+              <a>
+                <input type="checkbox" id="checkPermits"  style="margin-right: 10px;" onclick="showPermits();" checked>
+                <label for="checkPermits"><span>Permit Status </span>
+                </label>
+              </a>
+            </li>
+  
+           
+  
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#amount-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span> Amount</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="amount-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+  
+            <li>
+             
+              <a>
+                <input type="checkbox" id="checkTotalAmount"  style="margin-right: 10px;" onclick="showTotalAmount();" checked>
+                <label for="checkTotalAmount"><span>Total Amount</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalReceived"  style="margin-right: 10px;" onclick="showTotalReceived();" checked>
+                <label for="checkTotalReceived"><span>Total Received</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalOutstanding"  style="margin-right: 10px;" onclick="showTotalOutstanding();" checked>
+                <label for="checkTotalOutstanding"><span>Total Outstanding</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalOutstandingAmount"  style="margin-right: 10px;" onclick="showTotalOutstandingAmount();" checked>
+                <label for="checkTotalOutstandingAmount"><span>Client wise Outstanding Amount</span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#stepathon-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span> Stepathon</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="stepathon-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkEmpParticipationStats"  style="margin-right: 10px;" onclick="showEmpParticipationStats();" checked>
+                <label for="checkEmpParticipationStats"><span>Cluster Participation</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCommLeaderboard"  style="margin-right: 10px;" onclick="showCommLeaderboard();" checked>
+                <label for="checkCommLeaderboard"><span>Cumulative Leaderboard : Top 10 Male</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCommLeaderboardFemale"  style="margin-right: 10px;" onclick="showCommLeaderboardFemale();" checked>
+                <label for="checkCommLeaderboardFemale"><span>Cumulative Leaderboard : Top 10 Female</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkDepartmentStats"  style="margin-right: 10px;" onclick="showDepartmentStats();" checked>
+                <label for="checkDepartmentStats"><span>Function Employee Participation</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkDailyStepCount"  style="margin-right: 10px;" onclick="showDailyStepCount();" checked>
+                <label for="checkDailyStepCount"><span>Organisation Daily Step Count</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkGenderParticipation"  style="margin-right: 10px;" onclick="showGenderParticipation();" checked>
+                <label for="checkGenderParticipation"><span>Gender Participation</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkClusterStats"  style="margin-right: 10px;" onclick="showClusterWise();" checked>
+                <label for="checkClusterStats"><span>Cluster Wise Total Steps Taken</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkFunctionWise"  style="margin-right: 10px;" onclick="showFunctionWise();" checked>
+                <label for="checkFunctionWise"><span>Function Wise Total Steps Taken</span>
+                </label>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#consumption-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span> Utility Consumption</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="consumption-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkPowerConsumption"  style="margin-right: 10px;" onclick="showPowerConsumption();" checked>
+                <label for="checkPowerConsumption"><span>Power Consumption</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkPowerConsumptionTop"  style="margin-right: 10px;" onclick="showPowerConsumptionTop();" checked>
+                <label for="checkPowerConsumptionTop"><span>Power Consumption Top Management</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkWaterConsumption"  style="margin-right: 10px;" onclick="showWaterConsumption();" checked>
+                <label for="checkWaterConsumption"><span>Water Consumption</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkWaterConsumptionTop"  style="margin-right: 10px;" onclick="showWaterConsumptionTop();" checked>
+                <label for="checkWaterConsumptionTop"><span>Water Consumption Top Management</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkEnergyIntensity"  style="margin-right: 10px;" onclick="showEnergyIntensity();" checked>
+                <label for="checkEnergyIntensity"><span>Energy Intensity</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkCarbonEmission"  style="margin-right: 10px;" onclick="showCarbonEmission();" checked>
+                <label for="checkCarbonEmission"><span>Carbon Emission</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkFuelConsumption"  style="margin-right: 10px;" onclick="showFuelConsumption();" checked>
+                <label for="checkFuelConsumption"><span>Fuel Consumption</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkWaste"  style="margin-right: 10px;" onclick="showWaste();" checked>
+                <label for="checkWaste"><span>Site Wise Dry Segregation Data</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkEVConsumption"  style="margin-right: 10px;" onclick="showEVConsumption();" checked>
+                <label for="checkEVConsumption"><span>Site Wise EV Consumption</span>
+                </label>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#occupancy-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span> Occupancy Summary</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="occupancy-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+  
+            <li>
+
+              <a>
+                <input type="checkbox" id="checkOccupancy"  style="margin-right: 10px;" onclick="showOccupancy();" checked>
+                <label for="checkOccupancy"><span>Occupancy Summary</span>
+                </label>
+              </a>
+            </li>
+  
+            <li>
+              <a>
+                <input type="checkbox" id="checkFitout"  style="margin-right: 10px;" onclick="showFitout();" checked>
+                <label for="checkFitout"><span>FitOut</span>
+                </label>
+              </a>
+            </li>
+  
+            <li>
+  
+              <a>
+                <input type="checkbox" id="checkFacilityInfo"  style="margin-right: 10px;" onclick="showFacilityInfo();" checked>
+                <label for="checkFacilityInfo"><span>Facility Info</span>
+                </label>
+              </a>
+            </li>
+  
+            <li>
+  
+              <a>
+                <input type="checkbox" id="checkRegisterdUser"  style="margin-right: 10px;" onclick="showRegisterdUser();" checked>
+                <label for="checkRegisterdUser"><span>Total Registered User</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkTotalDownloads"  style="margin-right: 10px;" onclick="showTotalDownloads();" checked>
+                <label for="checkTotalDownloads"><span>Total Downloads</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkFitoutRequest"  style="margin-right: 10px;" onclick="showFitoutRequest();" checked>
+                <label for="checkFitoutRequest"><span>Fitout Request</span>
+                </label>
+              </a>
+            </li>
+  
+  
+            <li>
+  
+              <a>
+                <input type="checkbox" id="checkManPowerAttendance"  style="margin-right: 10px;" onclick="showManPowerAttendance();" checked>
+                <label for="checkManPowerAttendance"><span>ManPower Attendance</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkEventsFootfallAnalysis"  style="margin-right: 10px;" onclick="showEventsFootfallAnalysis();" checked>
+                <label for="checkEventsFootfallAnalysis"><span>Events Footfall Analysis</span>
+                </label>
+              </a>
+            </li>
+  
+           
+  
+          </ul>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" data-bs-target="#incidentTop-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-journal-text"></i><span>Incidents Top Management</span><i class="bi bi-chevron-down ms-auto"></i>
+          </a>
+          <ul id="incidentTop-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            
+            <li>
+              <a>
+                <input type="checkbox" id="checkLTIRTop"  style="margin-right: 10px;" onclick="showLTIRTop();" checked>
+                <label for="checkLTIRTop"><span>LTIR</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkZeroIncidentDaysTop"  style="margin-right: 10px;" onclick="showZeroIncidentDaysTop();" checked>
+                <label for="checkZeroIncidentDaysTop"><span>Zero Incident Days</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkIncidentPerSqFtTop"  style="margin-right: 10px;" onclick="showIncidentPerSqFtTop();" checked>
+                <label for="checkIncidentPerSqFtTop"><span>Incident Per Million Sq Ft Per Annum</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkIncidentNearMissGoodCatchTop"  style="margin-right: 10px;" onclick="showIncidentNearMissGoodCatchTop();" checked>
+                <label for="checkIncidentNearMissGoodCatchTop"><span>Incident Near Miss Good Catch Per Million Sq Ft Per Annum</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkIncidentsTop"  style="margin-right: 10px;" onclick="showIncidentsTop();" checked>
+                <label for="checkIncidentsTop"><span>Incidents</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkRACTop"  style="margin-right: 10px;" onclick="showRACTop();" checked>
+                <label for="checkRACTop"><span>Incident Summary</span>
+                </label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <input type="checkbox" id="checkPyramidTop"  style="margin-right: 10px;" onclick="showPyramidTop();" checked>
+                <label for="checkPyramidTop"><span>Level Wise Incidents</span>
+                </label>
+              </a>
+            </li>
+
+            <li>
+              <a>
+                <input type="checkbox" id="checkCategoryWiseIncidentsTop"  style="margin-right: 10px;" onclick="showCategoryWiseIncidentsTop();" checked>
+                <label for="checkCategoryWiseIncidentsTop"><span>Top 5 Category Wise Incident</span>
+                </label>
+              </a>
+            </li>
+
+          </ul>
+        </li>
+
+
+
+
+      <!-- <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#count-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Count</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="count-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalAssetsAvailable" onclick="showTotalAssetsAvailable();">
+              <i class="bi bi-circle"></i><span>Total Assets Available</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkAssetsInUse" onclick="showAssetsInUse();">
+              <i class="bi bi-circle"></i><span>Assets In Use</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkAssetInBreakdown" onclick="showAssetInBreakdown();">
+              <i class="bi bi-circle"></i><span>Asset In Breakdown</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkLTIR" onclick="showLTIR();">
+              <i class="bi bi-circle"></i><span>LTIR</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkZeroIncidentDays" onclick="showZeroIncidentDays();">
+              <i class="bi bi-circle"></i><span>Zero Incident Days</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkIncidentPerSqFt" onclick="showIncidentPerSqFt();">
+              <i class="bi bi-circle"></i><span>Incident Per Million Sq Ft Per Annum</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkIncidentNearMissGoodCatch"
+              onclick="showIncidentNearMissGoodCatch();">
+              <i class="bi bi-circle"></i><span>Incident Near Miss Good Catch Per Million Sq Ft Per Annum</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkSafeManHours" onclick="showSafeManHours();">
+              <i class="bi bi-circle"></i><span>Safe Man-Hours</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCriticalAssetsInBreakdown"
+              onclick="showCriticalAssetsInBreakdown();">
+              <i class="bi bi-circle"></i><span>Critical Assets In Breakdown</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkPPMConductedAssets" onclick="showPPMConductedAssets();">
+              <i class="bi bi-circle"></i><span>PPM Conducted Assets</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkVisitors" onclick="showVisitors();">
+              <i class="bi bi-circle"></i><span>Visitors</span>
+            </a>
+          </li>
+         
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkExpectedVisitors" onclick="showExpectedVisitors();">
+              <i class="bi bi-circle"></i><span>Expected Visitors</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkUnExpectedVisitors" onclick="showUnExpectedVisitors();">
+              <i class="bi bi-circle"></i><span>UnExpected Visitors</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalVisitorsII" onclick="showTotalVisitors2();">
+              <i class="bi bi-circle"></i><span>Total Visitors II</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkGoodsIn" onclick="showGoodsIn();">
+              <i class="bi bi-circle"></i><span>Good In</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkGoodsOut" onclick="showGoodsOut();">
+              <i class="bi bi-circle"></i><span>Goods Out </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkGoodsOutwards" onclick="showGoodsOutwards();">
+              <i class="bi bi-circle"></i><span>Goods Outwards </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkGoodsInwards" onclick="showGoodsInwards();">
+              <i class="bi bi-circle"></i><span>Goods Inwards </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalStaff" onclick="showTotalStaff();">
+              <i class="bi bi-circle"></i><span>Total Staff </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkStaffIn" onclick="showStaffIn();">
+              <i class="bi bi-circle"></i><span> Staff In </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkStaffOut" onclick="showStaffOut();">
+              <i class="bi bi-circle"></i><span> Staff Out </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkPermits" onclick="showPermits();">
+              <i class="bi bi-circle"></i><span>Permits Status</span>
+            </a>
+          </li>
+          <li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkPermitSite" onclick="showPermitSite();">
+              <i class="bi bi-circle"></i><span>Permit Site</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkEnergyIntensity" onclick="showEnergyIntensity();">
+              <i class="bi bi-circle"></i><span>Energy Intensity</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCarbonEmission" onclick="showCarbonEmission();">
+              <i class="bi bi-circle"></i><span>Carbon Emission</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkFuelConsumption" onclick="showFuelConsumption();">
+              <i class="bi bi-circle"></i><span>Fuel Consumption</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkFitout" onclick="showFitout();">
+              <i class="bi bi-circle"></i><span>Fitout </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkFitoutRequest" onclick="showFitoutRequest();">
+              <i class="bi bi-circle"></i><span>Fitout Request</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCustomerSentiments" onclick="showCustomerSentiments();">
+              <i class="bi bi-circle"></i><span>Customer Sentiments</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkExecutiveEscalation" onclick="showExecutiveEscalation();">
+              <i class="bi bi-circle"></i><span>Executive Escalation</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkBodyInjuryChart" onclick="showBodyInjuryChart() ;">
+              <i class="bi bi-circle"></i><span>Body Injury Chart</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkOccupancy" onclick=" showOccupancy();">
+              <i class="bi bi-circle"></i><span>Occupancy Summary </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkOpenEscalation" onclick=" showOpenEscalation();">
+              <i class="bi bi-circle"></i><span>Open Escalation </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCloseEscalation" onclick=" showCloseEscalation();">
+              <i class="bi bi-circle"></i><span>Close Escalation </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkAvgEscalation" onclick=" showAvgEscalation();">
+              <i class="bi bi-circle"></i><span>Average Escalation </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCustomAvg" onclick=" showCustomAvg();">
+              <i class="bi bi-circle"></i><span>Customer Average Rating </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkRegisterdUser" onclick=" showRegisterdUser();">
+              <i class="bi bi-circle"></i><span>Registerd User </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalDownloads" onclick=" showTotalDownloads();">
+              <i class="bi bi-circle"></i><span>Total Downloads </span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalParking" onclick="showTotalParking();">
+              <i class="bi bi-circle"></i><span>Total Parking</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkFreeParking" onclick="showFreeParking();">
+              <i class="bi bi-circle"></i><span>Free Parking</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkPaidParking" onclick="showPaidParking();">
+              <i class="bi bi-circle"></i><span>Paid Parking</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkOccupiedParking" onclick="showOccupiedParking();">
+              <i class="bi bi-circle"></i><span>Allocated Parking</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkVacantParking" onclick="showVacantParking();">
+              <i class="bi bi-circle"></i><span>Available Parking</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalGatePass" onclick="showTotalGatePass();">
+              <i class="bi bi-circle"></i><span>Total Gate Pass</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkReturnablePass" onclick="showReturnablePass();">
+              <i class="bi bi-circle"></i><span>Returnable Gate Pass Issued</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkNonReturnablePass" onclick="showNonReturnablePass();">
+              <i class="bi bi-circle"></i><span>Non Returnable Gate Pass Issued</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalAmount" onclick="showTotalAmount();">
+              <i class="bi bi-circle"></i><span>Total Amount</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalReceived" onclick="showTotalReceived();">
+              <i class="bi bi-circle"></i><span>Total Received</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalOutstanding" onclick="showTotalOutstanding();">
+              <i class="bi bi-circle"></i><span>Total Outstanding</span>
+            </a>
+          </li>
+
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTotalOutstandingAmount"
+              onclick="showTotalOutstandingAmount();">
+              <i class="bi bi-circle"></i><span>Client Wise Total Outstanding Amount</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#Tickets-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Tickets</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="Tickets-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTickets" onclick="showTickets();">
+              <i class="bi bi-circle"></i><span>Tickets</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCategoryWiseTickets" onclick="showCategoryWiseTickets();">
+              <i class="bi bi-circle"></i><span>Unit Category-wise Tickets</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCategoryWiseProactiveTickets"
+              onclick="showCategoryWiseProactiveTickets();">
+              <i class="bi bi-circle"></i><span>Unit Category-wise Proactive Tickets</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCACategoryWiseTickets"
+              onclick="showCACategoryWiseTickets();">
+              <i class="bi bi-circle"></i><span>Common Area Category-wise Tickets</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCACategoryWiseProactiveTickets"
+              onclick="showCACategoryWiseProactiveTickets();">
+              <i class="bi bi-circle"></i><span>Common Area Category-wise Proactive Tickets</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkTicketsAgeingMatrix" onclick="showTicketsAgeingMatrix();">
+              <i class="bi bi-circle"></i><span>Tickets Ageing Matrix</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <a class="nav-link collapsed" data-bs-target="#statistics-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-menu-button-wide"></i><span>Statistics</span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="statistics-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkResolutionTAT" onclick="showResolutionTAT();">
+            <i class="bi bi-circle"></i><span>Resolution TAT</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkResponseTAT" onclick="showResponseTAT();">
+            <i class="bi bi-circle"></i><span>Response TAT</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkPowerConsumption" onclick="showPowerConsumption();">
+            <i class="bi bi-circle"></i><span>Power Consumption</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkPowerConsumptionTop" onclick="showPowerConsumptionTop();">
+            <i class="bi bi-circle"></i><span>Power Consumption Top Management</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkWaterConsumption" onclick="showWaterConsumption();">
+            <i class="bi bi-circle"></i><span>Water Consumption</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkWaterConsumptionTop" onclick="showWaterConsumptionTop();">
+            <i class="bi bi-circle"></i><span>Water Consumption Top Management</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkIncidents" onclick="showIncidents();">
+            <i class="bi bi-circle"></i><span>Incidents</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkCategoryWiseIncidents" onclick="showCategoryWiseIncidents();">
+            <i class="bi bi-circle"></i><span>Category wise Incidents</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkManPowerAttendance" onclick="showManPowerAttendance();">
+            <i class="bi bi-circle"></i><span>48/62 Man Power Attendance</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkEventsFootfallAnalysis"
+            onclick="showEventsFootfallAnalysis();">
+            <i class="bi bi-circle"></i><span>Events Footfall Analysis</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkRAC" onclick="showRAC();">
+            <i class="bi bi-circle"></i><span>Incident Summary</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkAssetsBreakdown" onclick="showAssetsBreakdown();">
+            <i class="bi bi-circle"></i><span>Assets Breakdown Table</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkAssetsBreakdownGraph" onclick="showAssetsBreakdownGraph();">
+            <i class="bi bi-circle"></i><span>Assets Breakdown</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkWaste" onclick="showWaste();">
+            <i class="bi bi-circle"></i><span>Site Wise Dry Segregation Data</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkPyramid" onclick="showPyramid();">
+            <i class="bi bi-circle"></i><span>Level Wise Incidents</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkRootCause" onclick="showRootCause();">
+            <i class="bi bi-circle"></i><span>Primary Root Cause Category</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkReactiveProactiveTickets"
+            onclick="showReactiveProactiveTickets();">
+            <i class="bi bi-circle"></i><span>Reactive Proactive Tickets</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkOpenAndCloseEscalation"
+            onclick="showOpenAndCloseEscalation();">
+            <i class="bi bi-circle"></i><span>Open And Close Escalation</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkZoneWiseEscalation" onclick="showZoneWiseEscalation();">
+            <i class="bi bi-circle"></i><span>Zone Wise Escalation</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkCategoryWiseEscalation"
+            onclick="showCategoryWiseEscalation();">
+            <i class="bi bi-circle"></i><span>Category Wise Escalation</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkServicePartnerEvaluation"
+            onclick="showServicePartnerEvaluation();">
+            <i class="bi bi-circle"></i><span>Service Partner Evaluation</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkGenderParticipation" onclick="showGenderParticipation();">
+            <i class="bi bi-circle"></i><span>Gender Participation</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkClusterStats" onclick="showClusterWise();">
+            <i class="bi bi-circle"></i><span>Cluster Wise Total Steps Taken</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkFunctionWise" onclick="showFunctionWise();">
+            <i class="bi bi-circle"></i><span>Function Wise Total Steps Taken</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkTrendsOverMonthSites" onclick="showTrendsOverMonthSites();">
+            <i class="bi bi-circle"></i><span>Inventory Trends </span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkDeliveryVisitors" onclick="showDeliveryVisitors();">
+            <i class="bi bi-circle"></i><span>Delivery Visitors</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkCheckList" onclick="showCheckList();">
+            <i class="bi bi-circle"></i><span>CheckList</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkTopChecklist" onclick="showTopChecklist();">
+            <i class="bi bi-circle"></i><span>Top 10 CheckList</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkFacilityInfo" onclick="showFacilityInfo();">
+            <i class="bi bi-circle"></i><span>Facility Info</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkInventory" onclick="showTotalInventory();">
+            <i class="bi bi-circle"></i><span>Inventory</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkEmpParticipationStats" onclick="showEmpParticipationStats();">
+            <i class="bi bi-circle"></i><span>Cluster Participation Participation</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkCommLeaderboard" onclick="showCommLeaderboard();">
+            <i class="bi bi-circle"></i><span>Cumulative Leaderboard : Top 10 Male</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkCommLeaderboardFemale" onclick="showCommLeaderboardFemale();">
+            <i class="bi bi-circle"></i><span>Cumulative Leaderboard : Top 10 Female</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkDepartmentStats" onclick="showDepartmentStats();">
+            <i class="bi bi-circle"></i><span>Function Employee Participation</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkDailyStepCount" onclick="showDailyStepCount();">
+            <i class="bi bi-circle"></i><span>Organisation Daily Step Count</span>
+          </a>
+        </li>
+
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkTechnicalChecklist" onclick="showTechnicalChecklist();">
+            <i class="bi bi-circle"></i><span>Technical Checklist</span>
+          </a>
+        </li>
+        <li>
+          <a style="color:blue; cursor:pointer;" id="checkNonTechnicalChecklist" onclick="showNonTechnicalChecklist();">
+            <i class="bi bi-circle"></i><span>Non Technical Checklist</span>
+          </a>
+        </li>
+
+      </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#Inventory-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Inventory</span><i
+            class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="Inventory-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkInventoryConsumption" onclick="showInventoryConsumption()">
+              <i class="bi bi-circle"></i><span>Inventory Consumption</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkInventoryReport" onclick="showInventoryConsumptionReport()">
+              <i class="bi bi-circle"></i><span>Inventory Consumption Report</span>
+            </a>
+          </li>
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCurrentStock" onclick="showCurrentStock()">
+              <i class="bi bi-circle"></i><span>Current Stock v/s Min Stock Level</span>
+            </a>
+          </li>
+
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkInventoryConsumptionGreen"
+              onclick="showInventoryConsumptionGreen()">
+              <i class="bi bi-circle"></i><span>Inventory Consumption Green</span>
+            </a>
+          </li>
+
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkInventoryConsumptionReportGreen"
+              onclick="showInventoryConsumptionReportGreen()">
+              <i class="bi bi-circle"></i><span>Inventory Consumption Report Green</span>
+            </a>
+          </li>
+
+          <li>
+            <a style="color:blue; cursor:pointer;" id="checkCurrentStockGreen" onclick="showCurrentStockGreen()">
+              <i class="bi bi-circle"></i><span>Current Stock Green</span>
+            </a>
+          </li>
+        </ul>
+      </li> -->
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <center>
+      <h4 style="color:#77216f;" class="my-2"><b>My Dashboard</b></h4>
+    </center><br>
+
+    <div class="link-toggler">
+      <a id="toggleCustom" class="px-4" onclick="showToggleCustom()" href="#" style="color:#77216f;">CUSTOM </a>
+      <a id="toggleDaily" class="l px-4 l-active" onclick="showToggleDaily()" href="#" style="color:#77216f;"> DAILY
+      </a>
+      <!-- <a id="toggleInventory" class="px-4 " onclick="showToggleInventory()" href="#" style="color:#77216f;"> INVENTORY
+      </a> -->
+    </div><br/>
+
+    <div class="dashboard-top-nav fw-bold my-2">
+      <div style="display: flex;flex-direction: column;;">
+        <label style="font-size: 17px;">Project Start Or</label>
+        <button
+          style="background-color:rgb(1, 146, 1);border-radius: 4px;width:130px;height: 35px;margin-top: 8px; color: white;"
+          id="inventDate" onclick="showInventDate()">Start Date</button>
+      </div>
+      <div id="showDaily" class="row">
+        <div class="d-flex dashboard-cal my-2 mx-4">
+          <input class="border-0" id="currentDate" onchange="showDate()" type="date" />
+        </div>
+      </div>
+
+      <div id="showCustom" class="parent">
+        <div class="col-sm child">
+          <label style="font-size: 17px;">Custom Start Date</label>
+          <div class="d-flex dashboard-cal my-2">
+            <input class="border-0" id="startDate" onchange="showDateCustom()" type="date" />
+          </div>
+        </div>
+        <div class="col-sm child">
+          <label></label>
+          <div class="d-flex dashboard-cal my-2 mx-2">
+            <span>To</span>
+          </div>
+        </div>
+        <div class="col-sm child">
+          <label style="font-size: 17px;">Custom End Date</label>
+          <div class="d-flex dashboard-cal my-2 mx-2">
+            <input class="border-0" id="endDate" onchange="showDateCustom()" type="date" />
+          </div>
+        </div>
+        <div class="col-sm child">
+        <label style="font-size: 15px;"></label>
+        <div class="d-flex  my-2 mx-2">
+        <button class="button button2" id="apply" onclick="getResult()" style="background-color: rgb(1, 146, 1); border-radius: 4px; width: 130px; height: 35px; margin-top: 0px; margin: 0px; color: white;">Apply</button>
+      </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    <div class="grid-stack"></div>
+
+  </main><!-- End #main
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"
+    integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+
+  <script src="jsFiles/urls.js"></script>
+  <script src="jsFiles/custom.js"></script>
+  <!-- <script>
+    document.addEventListener('click', function(event) {
+        var targetElement = event.target;
+        var commonPopups = document.querySelectorAll('.popup-menu');
+
+        commonPopups.forEach(function(popup) {
+            if (!popup.contains(targetElement)) {
+                // Check if the popup-menu is visible
+                var computedStyle = window.getComputedStyle(popup);
+                if (computedStyle.display !== "none") {
+                    popup.style.display = "none";
+                }
+            }
+        });
+    });
+</script> -->
+
+  <!-- <script>
+  document.addEventListener('click', function(event) {
+    var targetElement = event.target;
+    var dropdown = document.getElementById("dataDropdown_ticket");
+
+    // Check if the click target is not within the dropdown menu or its parent element
+    if (!dropdown.contains(targetElement)) {
+        dropdown.style.display = "none";
+    }
+});
+
+</script> -->
+
+
+
+
+</body>
+
+</html>
