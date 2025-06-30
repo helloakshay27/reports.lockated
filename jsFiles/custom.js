@@ -7439,7 +7439,7 @@ let a64 = {
 
                     <center><span class="fw-bold my-4" id="bodyInjuryChartNoData"><br><br><br>No Data Available</span></center>
                     <center><div style="background-color:#fff; class="card-body">
-                    <img  id="bodyInjuryChart" name="bodyInjuryChart"  width=600px height=600px  src="src="https://reports.lockated.com:8000/media/body_injury/8756975713423273.png"" alt="">
+                    <img  id="bodyInjuryChart" name="bodyInjuryChart"  width=600px height=600px  src="src="https://oig-reports.lockated.com:8000/media/body_injury/8756975713423273.png"" alt="">
                     </div></center>
                     <span class="col-4 ml-2">
                       <div style="padding:10px;">
@@ -12122,7 +12122,7 @@ let xhr_sites = new XMLHttpRequest();
 xhr_sites.open("GET", getSites + "?token=" + token, true);
 xhr_sites.onload = function () {
   resSites = JSON.parse(this.responseText);
-  console.log(resSites);
+  console.log("res" , resSites);
   updateCompanyDropdown();
 };
 xhr_sites.send();

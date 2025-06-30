@@ -1312,7 +1312,7 @@ getCurrentStockGreen =
     getCategoryEscalation = ip + "charts-monthly/get-category-wise-executive-escalation-monthly/";
     getOpenCloseEscalation = ip + "charts-monthly/get-executive-escalation-pie-chart-monthly/";
     getOpenCloseDrill = ip + "ceo-drill-down/get-drill-down-open-closed-escalation-ceo/";
-    // getOpenCloseDrill = "https://reports.lockated.com:8000/ceo-drill-down/get-drill-down-open-closed-escalation-ceo/?site_id=1010&society_id=3632,2189,2192,2193,2194,2195,2404,2635,2687,2191,2196,2190&from_date=2022-11-01&to_date=2023-11-29&status=Closed&first_drilldown_by=Category&sec_drilldown_by=Priority&sec_drill_down_on=Carpentry";
+    // getOpenCloseDrill = "https://oig-reports.lockated.com:8000/ceo-drill-down/get-drill-down-open-closed-escalation-ceo/?site_id=1010&society_id=3632,2189,2192,2193,2194,2195,2404,2635,2687,2191,2196,2190&from_date=2022-11-01&to_date=2023-11-29&status=Closed&first_drilldown_by=Category&sec_drilldown_by=Priority&sec_drill_down_on=Carpentry";
 
     getSiteWiseEscalation = ip + "charts-monthly/get-executive-escalation-zone-wise-chart-monthly/";
 
@@ -1321,7 +1321,7 @@ getCurrentStockGreen =
       ip + "charts-daily/get-total-downloads/";
 
     // ?&site_id=2630&society_id=3719
-    getInventDate = "https://reports.lockated.com:8000/charts-daily/get-project-start-date/";
+    getInventDate = "https://oig-reports.lockated.com:8000/charts-daily/get-project-start-date/";
     getTotalAssetCard = ip + "charts-monthly/get-total-asset-card-monthly/";
     getTotalAssetInUseAndBreakDownCard =
       ip + "charts-monthly/get-total-asset-in-use-and-breakdown-card-monthly/";
@@ -5874,7 +5874,7 @@ let a64 = {
 
                     <center><span class="fw-bold my-4" id="bodyInjuryChartNoData"><br><br><br>No Data Available</span></center>
                     <center><div style="background-color:#fff; class="card-body">
-                    <img  id="bodyInjuryChart" name="bodyInjuryChart"  width=600px height=600px  src="src="https://reports.lockated.com:8000/media/body_injury/8756975713423273.png"" alt="">
+                    <img  id="bodyInjuryChart" name="bodyInjuryChart"  width=600px height=600px  src="src="https://oig-reports.lockated.com:8000/media/body_injury/8756975713423273.png"" alt="">
                     </div></center>
                     <span class="col-4 ml-2">
                       <div style="padding:10px;">

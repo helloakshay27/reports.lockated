@@ -413,7 +413,7 @@ function saveModifiedLayout() {
   formData.append('token', token);
   formData.append('dashboard_name', 'fm_inventory');
 
-  fetch('https://reports.lockated.com:8000/user-dashboard/save-dashboard/', {
+  fetch('https://oig-reports.lockated.com:8000/user-dashboard/save-dashboard/', {
     method: 'POST',
     body: formData,
   })
@@ -686,7 +686,7 @@ function getSiteSocietyIdForData(i) {
 //   //  }
 
   let selectedWidgetsList = []
-  fetch(`https://reports.lockated.com:8000/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_inventory`)
+  fetch(`https://oig-reports.lockated.com:8000/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_inventory`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -831,7 +831,7 @@ function getDetailsIfIdExists(pro_id, pro_name, link_society_id) {
     // "&society_id=" + link_society_id;
 
     let selectedWidgetsList = []
-    fetch(`https://reports.lockated.com:8000/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_inventory`)
+    fetch(`https://oig-reports.lockated.com:8000/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_inventory`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -981,7 +981,7 @@ function getDetailsIfIdExists(pro_id, pro_name, link_society_id) {
 
 
 //   let selectedWidgetsList = []
-//   fetch(`https://reports.lockated.com:8000/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_inventory`)
+//   fetch(`https://oig-reports.lockated.com:8000/user-dashboard/get-dashboard/?token=${token}&dashboard_name=fm_inventory`)
 //     .then(response => {
 //       if (!response.ok) {
 //         throw new Error(`HTTP error! Status: ${response.status}`);
